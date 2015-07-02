@@ -4,7 +4,7 @@ import uuid
 import psycopg2
 import pytest
 
-from pgmanagedcxn import ManagedConnection
+from pgmanagedconnection import ManagedConnection
 
 
 @pytest.yield_fixture

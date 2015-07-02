@@ -21,7 +21,7 @@ Creating a Managed Connection
 
 .. code:: python
 
-    >>> from pgmanagedcxn import ManagedConnection
+    >>> from pgmanagedconnection import ManagedConnection
     >>>
     >>> dsn = 'postgres:///postgres'  # a libpq connection string
     >>> manager = ManagedConnection(dsn)
