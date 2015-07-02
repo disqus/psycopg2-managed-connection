@@ -19,7 +19,7 @@ Usage
 Creating a Managed Connection
 -----------------------------
 
-.. doctest::
+.. code:: python
 
     >>> from pgmanagedcxn import ManagedConnection
     >>>
@@ -31,7 +31,7 @@ Creating a Managed Connection
 Making Queries
 --------------
 
-.. doctest::
+.. code:: python
 
     >>> with manager() as connection:
     ...     cursor = connection.cursor()
@@ -43,7 +43,11 @@ Making Queries
 Dealing with Uncommitted Transactions
 -------------------------------------
 
-.. doctest::
+Leaving a transaction open when exiting the context manager will lead to a
+``RuntimeError``. This also results in any open transactions implicitly being
+rolled back.
+
+.. code:: python
 
     >>> with manager() as connection:
     ...    cursor = connection.cursor()
@@ -55,7 +59,10 @@ Dealing with Uncommitted Transactions
 Dealing with Errors
 -------------------
 
-.. doctest::
+The currently open transaction will be rolled back if an unhandled exception is
+encountered.
+
+.. code:: python
 
     >>> import psycopg2
     >>> with manager() as connection:
@@ -75,7 +82,7 @@ Development
 Testing
 -------
 
-The test suite can be run with ``make test``, or ``python setup.py test``.
+The test suite can be run with ``make test``.
 
 It assumes a running and accessible PostgreSQL server. The connection details
 are deferred to the underlying ``libpq`` implementation, and default values can
