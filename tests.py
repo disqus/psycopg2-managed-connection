@@ -1,5 +1,5 @@
-import uuid
 import os
+import uuid
 
 import psycopg2
 import pytest
