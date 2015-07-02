@@ -23,8 +23,6 @@ def managed_connection():
 
     yield managed_connection
 
-    assert managed_connection.closed
-
 
 def test_connection_reset_on_error(managed_connection):
     """
@@ -44,10 +42,6 @@ def test_connection_reset_on_error(managed_connection):
         connection.commit()
 
     assert not managed_connection.closed, 'connection should still be open'
-
-    with managed_connection(close=True):
-        # TODO: eventually postgresql should send SIGQUIT during exit to kill clients
-        pass  # close connection for the benefit of test teardown
 
 
 def test_connection_rollback_on_error(managed_connection):
@@ -82,7 +76,3 @@ def test_connection_release_in_transaction(managed_connection):
 
     assert not managed_connection.closed, 'connection should still be open'
     assert managed_connection.status == psycopg2.extensions.TRANSACTION_STATUS_IDLE
-
-    with managed_connection(close=True):
-        # TODO: eventually postgresql should send SIGQUIT during exit to kill clients
-        pass  # close connection for the benefit of test teardown
