@@ -1,6 +1,8 @@
 psycopg2-managed-connection
 ###########################
 
+|pypi|
+
 This package includes a managed connection for psycopg2_ that provides
 thread-safe exclusive access to an underlying ``psycopg2.connection`` object.
 
@@ -12,6 +14,16 @@ exception while a thread is interacting with the database.
 
 ``ManagedConnection`` also will ensure that a connection that is closed upon
 entering the managed context will be opened.
+
+Installation
+============
+
+This package is released on PyPI_ as ``psycopg2-managed-connection`` and can be
+installed via pip_:
+
+.. code:: bash
+
+    $ pip install psycopg2-managed-connection
 
 Usage
 =====
@@ -107,7 +119,13 @@ set to the virtual machine IP address.
     $ PGUSER=postgres PGHOST=$(boot2docker ip) make test
 
 
-.. _boot2docker: https://github.com/boot2docker/boot2docker
-.. _psycopg2: https://pypi.python.org/pypi/psycopg2/
+.. _PyPI: https://pypi.python.org/pypi/psycopg2-managed-connection
 .. _`libpq environment variables`: http://www.postgresql.org/docs/9.3/static/libpq-envars.html
+.. _boot2docker: https://github.com/boot2docker/boot2docker
+.. _pip: https://pypi.python.org/pypi/pip
+.. _psycopg2: https://pypi.python.org/pypi/psycopg2/
 .. _tox: https://pypi.python.org/pypi/tox
+
+.. |pypi| image:: https://img.shields.io/pypi/v/psycopg2-managed-connection.svg?style=flat-square&label=latest%20version
+    :target: https://pypi.python.org/pypi/psycopg2-managed-connection
+    :alt: Latest version released on PyPi
