@@ -25,7 +25,7 @@ Creating a Managed Connection
     >>>
     >>> dsn = 'postgres:///postgres'  # a libpq connection string
     >>> manager = ManagedConnection(dsn)
-    >>> print repr(manager)
+    >>> print(repr(manager))
     <ManagedConnection: postgres:///postgres (closed)>
 
 Making Queries
@@ -81,6 +81,8 @@ It assumes a running and accessible PostgreSQL server. The connection details
 are deferred to the underlying ``libpq`` implementation, and default values can
 be specified using `libpq environment variables`_.
 
+tox_ is also supported as a test runner (if installed.)
+
 Testing with Docker
 ~~~~~~~~~~~~~~~~~~~
 
@@ -97,3 +99,4 @@ set to the virtual machine IP address::
 .. _boot2docker: https://github.com/boot2docker/boot2docker
 .. _psycopg2: https://pypi.python.org/pypi/psycopg2/
 .. _`libpq environment variables`: http://www.postgresql.org/docs/9.3/static/libpq-envars.html
+.. _tox: https://pypi.python.org/pypi/tox
