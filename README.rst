@@ -25,7 +25,7 @@ Creating a Managed Connection
     >>>
     >>> dsn = 'postgres:///postgres'  # a libpq connection string
     >>> manager = ManagedConnection(dsn)
-    >>> print(repr(manager))
+    >>> manager
     <ManagedConnection: postgres:///postgres (closed)>
 
 Making Queries
