@@ -93,12 +93,16 @@ tox_ is also supported as a test runner (if installed.)
 Testing with Docker
 ~~~~~~~~~~~~~~~~~~~
 
+.. code:: bash
+
     $ export PGPORT=5432
     $ docker run -dp $PGPORT:5432 postgres
     $ PGUSER=postgres make test
 
 If using boot2docker_, the ``PGHOST`` environment variable will also need to be
-set to the virtual machine IP address::
+set to the virtual machine IP address.
+
+.. code:: bash
 
     $ PGUSER=postgres PGHOST=$(boot2docker ip) make test
 
