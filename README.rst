@@ -94,7 +94,9 @@ Development
 Testing
 -------
 
-The test suite can be run with ``make test``.
+The test suite can be run with ``make test``. This will run the test suite using
+the version used by your local ``python`` command. You can force usage of ``python3``
+by running ``make test3``.
 
 It assumes a running and accessible PostgreSQL server. The connection details
 are deferred to the underlying ``libpq`` implementation, and default values can
